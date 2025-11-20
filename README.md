@@ -4,8 +4,6 @@ The pipeline includes three main stages: Detection → Refinement → Tracking.
 
 ## 1. System Overview
 
----
-
 ### 1.1 Detection
 
 -   Apply **CLAHE** and **horizontal-flip TTA**.
@@ -50,7 +48,7 @@ pip install -r requirements.txt
 ### 2.3 Dataset Preparation
 
 -   Convert Raw Data → YOLO Format (`create_dataset.py`)
-
+```
 data/
 └── yolo_dataset/
 ├── images/
@@ -62,17 +60,18 @@ data/
 │ ├── val/
 │ └── test/
 └── dataset.yaml
-
+```
 -   D-FINE model requires COCO-style annotations. Follow the structure used in the official repo:
-    data/
-    └── coco/
-    ├── images/
-    │ ├── train/
-    │ └── val/
-    └── annotations/
-    ├── instances_train.json
-    └── instances_val.json
-
+```
+data/
+└── coco/
+├── images/
+│ ├── train/
+│ └── val/
+└── annotations/
+├── instances_train.json
+└── instances_val.json
+```
 ### 3.3 Reference Image Processing
 
 -   Use `reference_image_processor.py` to create cleaned reference crops (e.g. via GrabCut)
