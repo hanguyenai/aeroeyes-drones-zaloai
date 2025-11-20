@@ -47,7 +47,7 @@ pip install -r requirements.txt
 
 ### 2.3 Dataset Preparation
 
--   Convert Raw Data → YOLO Format (`create_dataset.py`)
+- Convert raw data to YOLO format using `create_dataset.py` with the following directory structure:
 ```
 data/
 └── yolo_dataset/
@@ -61,7 +61,7 @@ data/
 │ └── test/
 └── dataset.yaml
 ```
--   D-FINE model requires COCO-style annotations. Follow the structure used in the official repo:
+- The D-FINE model requires COCO-style annotations. Use the following directory structure:
 ```
 data/
 └── coco/
@@ -74,15 +74,15 @@ data/
 ```
 ### 3.3 Reference Image Processing
 
--   Use `reference_image_processor.py` to create cleaned reference crops (e.g. via GrabCut)
+- Use `reference_image_processor.py` to generate cleaned reference crops (e.g., using GrabCut).
 
 ### 3.3 Training
 
--   Training code and experiments are organized in Jupyter notebooks under: `/notebooks`
--   `cd D-FINE` for training D-Fine model
+- Training scripts and experiments are organized as Jupyter notebooks in the `/notebooks` directory.
+- For D-FINE training, navigate to the `D-FINE` directory (`cd D-FINE`).
 
-### Inference
-
+### 3.4 Inference
+Run inference using:
 ```bash
 python predict.py
 ```
